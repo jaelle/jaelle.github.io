@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>JLCreations.com</title><link href="http://jlcreations.com/" rel="alternate"></link><link href="http://jlcreations.com/feeds/all.atom.xml" rel="self"></link><id>http://jlcreations.com/</id><updated>2018-01-04T00:00:00-06:00</updated><entry><title>Hello Lisp</title><link href="http://jlcreations.com/HelloLisp.html" rel="alternate"></link><published>2018-01-04T00:00:00-06:00</published><updated>2018-01-04T00:00:00-06:00</updated><author><name>Jaelle Scheuerman</name></author><id>tag:jlcreations.com,2018-01-04:HelloLisp.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>JLCreations.com</title><link href="http://jaelle.github.io/" rel="alternate"></link><link href="http://jaelle.github.io/feeds/all.atom.xml" rel="self"></link><id>http://jaelle.github.io/</id><updated>2018-01-04T00:00:00-06:00</updated><entry><title>Hello Lisp</title><link href="http://jaelle.github.io/HelloLisp.html" rel="alternate"></link><published>2018-01-04T00:00:00-06:00</published><updated>2018-01-04T00:00:00-06:00</updated><author><name>Jaelle Scheuerman</name></author><id>tag:jaelle.github.io,2018-01-04:HelloLisp.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
