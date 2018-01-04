@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>JLCreations.com</title><link href="http://jaelle.github.io/" rel="alternate"></link><link href="http://jaelle.github.io/feeds/posts.atom.xml" rel="self"></link><id>http://jaelle.github.io/</id><updated>2018-01-04T00:00:00-06:00</updated><entry><title>Hello Lisp</title><link href="http://jaelle.github.io/HelloLisp.html" rel="alternate"></link><published>2018-01-04T00:00:00-06:00</published><updated>2018-01-04T00:00:00-06:00</updated><author><name>Jaelle Scheuerman</name></author><id>tag:jaelle.github.io,2018-01-04:HelloLisp.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>JLCreations.com</title><link href="http://jlcreations.com/" rel="alternate"></link><link href="http://jlcreations.com/feeds/posts.atom.xml" rel="self"></link><id>http://jlcreations.com/</id><updated>2018-01-04T00:00:00-06:00</updated><entry><title>Hello Lisp</title><link href="http://jlcreations.com/HelloLisp.html" rel="alternate"></link><published>2018-01-04T00:00:00-06:00</published><updated>2018-01-04T00:00:00-06:00</updated><author><name>Jaelle Scheuerman</name></author><id>tag:jlcreations.com,2018-01-04:HelloLisp.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -971,41 +971,6 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Does-this-work-with-lisp?"&gt;Does this work with lisp?&lt;a class="anchor-link" href="#Does-this-work-with-lisp?"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-common-lisp"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt; &lt;span class="no"&gt;t&lt;/span&gt; &lt;span class="s"&gt;"It does"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-&lt;div class="output_area"&gt;
-&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;It does&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="output_area"&gt;
-&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
-&lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;NIL&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
