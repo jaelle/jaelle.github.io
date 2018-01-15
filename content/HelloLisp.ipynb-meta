@@ -1,7 +1,0 @@
-title: Hello Lisp
-slug: HelloLisp
-date: 2018-1-4
-category: posts
-tags: lisp firsts
-author: Jaelle Scheuerman
-summary: A test to see if we can use a Lisp kernel for a Jupyter Notebook and Pelican powered blog.

@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'Jaelle Scheuerman'
-SITENAME = 'Jaelle Scheuerman'
+AUTHOR = 'Jaelle'
+SITENAME = 'JLCreations'
 SITEURL = ''
-SITESUBTITLE = 'Welcome to my personal website'
+SITESUBTITLE = 'Jaelle Scheuerman'
 
 PATH = 'content'
 
@@ -31,9 +31,7 @@ MARKUP = ('md', 'ipynb')
 STATIC_PATHS = ['images','pdfs']
 
 MENUITEMS = [
-    ('Home','http://jlcreations.com'),
-    ('About','#'),
-    ('Resume','pdfs/JaelleScheuermanCV.pdf')
+    ('Resume','http://cs.tulane.edu/jaelle/JaelleScheuermanCV.pdf')
 ]
 
 PLUGIN_PATH = './plugins'
@@ -43,9 +41,5 @@ LOAD_CONTENT_CACHE = False
 THEME = "themes/crowsfoot"
 GITHUB_ADDRESS = "http://www.github.com/jaelle"
 TWITTER_ADDRESS = "http://www.twitter.com/jaelle"
-PROFILE_IMAGE_URL = "theme/images/jaelle.jpg"
+PROFILE_IMAGE_URL = "theme/images/logo.png"
 SHOW_ARTICLE_AUTHOR = False
-FORMATTED_FIELDS = ['summary']
-
-from datetime import date
-CURRENTYEAR = date.today().year
