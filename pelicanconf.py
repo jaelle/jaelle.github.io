@@ -32,7 +32,6 @@ STATIC_PATHS = ['images','pdfs']
 
 MENUITEMS = [
     ('Home','http://jlcreations.com'),
-    ('About','#'),
     ('Resume','pdfs/JaelleScheuermanCV.pdf')
 ]
 
