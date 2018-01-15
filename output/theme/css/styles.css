@@ -16,7 +16,7 @@ html { /* This stuff is for the sticky footer. */
 
 body {
     background-color:#fafafa;
-    font-family:'Open Sans';
+    font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
     margin: 20px auto 100px auto; /* For sticky footer. */
 }
 
@@ -40,9 +40,9 @@ body {
 }
 
 .sitetitle {
-    font-family: 'Merriweather';
+    font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
     font-weight: 300;
-    font-size: 4em;
+    font-size: 3em;
     padding-left: 10px; /* Hack to dodge :hover issue. */
     position: relative; /* Hack to dodge :hover issue. */
     left: -10px; /* Hack to dodge :hover issue. */
@@ -50,7 +50,7 @@ body {
 
 .sitesubtitle {
     color: #000;
-    font-size: 1em;
+    font-size: 1.3em;
     margin-bottom: 30px;
     margin-top: 20px;
     /* padding-left: 30px; */
@@ -59,7 +59,7 @@ body {
 /* The navbar. */
 
 .menu {
-    font-size: 1.3em;
+    font-size: 1em;
     /* padding-left: 30px; */
 }
 
@@ -71,6 +71,8 @@ body {
 /* Article list on index page. */
 
 .posttitle {
+    
+    font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
     font-size: 1.6em;
 }
 
@@ -88,8 +90,12 @@ body {
 }
 
 .postsummary {
-    font-family: Merriweather;
+    font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
     font-weight: 300;
+}
+
+.postsummary p {
+    padding: 5px 0 5px 0;
 }
 
 .post {
@@ -126,6 +132,7 @@ a:hover { /* Hover style: transition to orange. Cool! */
     position: relative;
     left: 40px;
     padding-bottom: 20px;
+    list-style-type:none;
 }
 
 /* Make super and subscipts look reasonable. */
@@ -232,6 +239,10 @@ sub {
 .article code {
     font-family: 'Source Code Pro';
     font-size: 1em;
+}
+
+.paginator {
+    font-size: 0.7em;
 }
 
 /* Footer at page bottom */

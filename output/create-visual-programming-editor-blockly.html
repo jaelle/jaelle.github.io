@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-      <title>JLCreations</title>
+      <title>Jaelle Scheuerman</title>
       <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css' />
       <link href='//fonts.googleapis.com/css?family=Merriweather:300' rel='stylesheet' type='text/css'/>
       <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:200,400,700' rel='stylesheet' type='text/css'/>
@@ -16,18 +16,19 @@
     <header class="siteheader">
       <!-- site image -->
         <div class= "siteimage">
-          <a class="nodec" href=theme/images/logo.png>
-            <img width="200" height="200" src=theme/images/logo.png>
+          <a class="nodec" href=>
+            <img width="200" height="200" src=theme/images/jaelle.jpg>
           </a>
         </div>
 
       <div class = "sitebanner">
-        <h1><a class="sitetitle nodec" href="">JLCreations</a></h1>
-        <h3 class ="sitesubtitle">Jaelle Scheuerman</h3>
+        <h1><a class="sitetitle nodec" href="">Jaelle Scheuerman</a></h1>
+        <h3 class ="sitesubtitle">Welcome to my personal website</h3>
         <!-- nav -->
         <nav class="menu">
           <ul>
             <!-- menu items-->
+              <li><a class="nodec" href="#">About</a></li>
               <li><a class="nodec" href="http://cs.tulane.edu/jaelle/JaelleScheuermanCV.pdf">Resume</a></li>
             <!--pages-->
             <!-- services icons -->
@@ -43,14 +44,14 @@
 <section class="content">
 
   <h3 class="posttitle">
-    <a class="nodec" href="/HelloLisp.html" rel="bookmark" title="Permalink to Hello Lisp">
-      Hello Lisp
+    <a class="nodec" href="/create-visual-programming-editor-blockly.html" rel="bookmark" title="Permalink to Build A Visual Programming Editor with Blockly">
+      Build A Visual Programming Editor with Blockly
     </a>
   </h3>
 
   <div class="postinfo">
-    <p class="published" title="2018-01-04T00:00:00-06:00">
-      Thu 04 January 2018
+    <p class="published" title="2018-01-15T12:00:00-06:00">
+      Mon 15 January 2018
     </p>
 
   </div><!-- .postinfo -->
@@ -1032,35 +1033,128 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Does-Lisp-Work?">Does Lisp Work?<a class="anchor-link" href="#Does-Lisp-Work?">¶</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [2]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-common-lisp"><pre><span></span><span class="p">(</span><span class="nb">format</span> <span class="no">t</span> <span class="s">"It does!"</span><span class="p">)</span>
-<span class="no">t</span>
+<p>Visual programming environments allow users to write and manipulate programs using graphical elements rather than text. Often, this is done to help novice programmers interact with code without having to worry about syntax. Several educational projects exist that make use of a visual programming environment, including MIT’s Scratch and Lego Mindstorm NXT-G.</p>
+<p>Blockly is an open source library used by many projects, including Code.org, AppInventor and my very own AdventureCode. It is aimed at helping developers create visual programming environments for their applications. The project has an active community and a fair amount of documentation on its Google Developer website. However, it can still be quite daunting to figure out just how to integrate it into a custom application.</p>
+<p>This tutorial will walk you through the steps of creating a web-based visual programming editor from scratch using Blockly. You will learn how to integrate a resizable Blockly interface into a webpage, create custom blocks, and generate some JavaScript.</p>
+<p>For this example, you will create a Blockly editor that can modify the look and feel of the current webpage. The user will be able to use blocks to change the site colors and edit the header text.</p>
+<h3 id="Working-Example-and-Tutorial-Files">Working Example and Tutorial Files<a class="anchor-link" href="#Working-Example-and-Tutorial-Files">¶</a></h3><p>You can view the finished project online at:
+<a href="http://jaelle.github.io/blockly-page-editor">http://jaelle.github.io/blockly-page-editor</a></p>
+<p>The files for this tutorial are available on GitHub.
+<a href="https://github.com/jaelle/blockly-page-editor">https://github.com/jaelle/blockly-page-editor</a></p>
+<p>Get Blockly</p>
+<p>Before you get started, make sure to download Blockly. There are several ways to go about this.</p>
+<p>Option 1: Download the zip file.</p>
+<p>Option 2: Download the TAR ball.</p>
+<p>Option 3: Clone the project from git.</p>
+<pre><code>git clone https://github.com/google/blockly.git blockly</code></pre>
+<h3 id="Get-Closure">Get Closure<a class="anchor-link" href="#Get-Closure">¶</a></h3><p>Since compressed Javascript is a nightmare to work with when in development, we will be using the uncompressed version of Blockly’s JavaScript. For this to function correctly, the Closure library is also required as a dependency.</p>
+<p>Visit Blockly’s Closure page for information on how to download Closure. Download and extract these files to your root directory. Ensure the folder is named “closure-library”.</p>
+<h3 id="Start-Creating-the-Page-Editor">Start Creating the Page Editor<a class="anchor-link" href="#Start-Creating-the-Page-Editor">¶</a></h3><p>Now it is time to design the page editor. This webpage will be editable by a Blockly editor contained in the page. It is made up of several parts.</p>
+<ul>
+<li><p>HTML</p>
+<ul>
+<li>Webpage (/index.html)</li>
+<li>Blockly Editor (/blockly.html)</li>
+<li>Styles (/styles.css)</li>
+</ul>
+</li>
+<li><p>Javascript</p>
+<ul>
+<li>Blockly (/blockly/blockly_uncompressed.js)</li>
+<li>Blockly Language Support (/blockly/msg/js/en.js)</li>
+<li>Blockly JavaScript Generator (/blockly/generators/javascript.js)</li>
+<li>Custom blocks (/blocks.js)</li>
+<li>Custom block javascript generator (/javascript.js)</li>
+</ul>
+</li>
+</ul>
+<p>Start by creating the HTML page (/index.html). Make it look something like the code found here:
+<a href="https://github.com/jaelle/blockly-page-editor/blob/gh-pages/index.html">https://github.com/jaelle/blockly-page-editor/blob/gh-pages/index.html</a></p>
+<p>Next, create the HTML page for Blockly (/blockly.html). This will run in the iframe of index.html. More information about creating a Blockly editor in an iframe can be found on the Blockly Developer site. Make sure it looks something like this:
+<a href="https://github.com/jaelle/blockly-page-editor/blob/gh-pages/blockly.html">https://github.com/jaelle/blockly-page-editor/blob/gh-pages/blockly.html</a></p>
+<p>Add some styles. An example stylesheet can be found here:
+<a href="https://github.com/jaelle/blockly-page-editor/blob/gh-pages/styles.css">https://github.com/jaelle/blockly-page-editor/blob/gh-pages/styles.css</a></p>
+<p>Visiting /index.html in the browser should reveal the Blockly editor loaded on the page. Several default blocks are loaded into the Blockly editor.  However, we want to create our own custom blocks for editing the page.</p>
+<h3 id="Create-Custom-Blocks">Create Custom Blocks<a class="anchor-link" href="#Create-Custom-Blocks">¶</a></h3><p>Visit the Block Factory demo app in your browser. To view this locally, navigate to: blockly/demos/blockfactory/index.html</p>
+<p>Note: When working with the Block Factory, you may receive an error that says “Unable to communicate between frames.” If this occurs, you will need to use another browser, such as Firefox, to run Block Factory locally on your computer. Alternatively, you can also visit the Block Factory online at: <a href="https://blockly-demo.appspot.com/static/demos/blockfactory/index.html">https://blockly-demo.appspot.com/static/demos/blockfactory/index.html</a></p>
+<p>Use the Block Factory to design custom blocks. Language templates for a custom block and its associated code generator can be created on this page. The left hand side of the screen contains code blocks for setting options of a new custom block. A preview of the new block displays on the upper right hand side of the screen. Below that is a template for the block’s code and the generated JavaScript.</p>
+<p>More information about using the Block Factory can be found on the Blockly Developer site.</p>
+<p>Create a custom block to hold our page settings. Make it look like the image below. You will be able to find all required blocks under each of the menu items in the left hand toolbar.</p>
+<p><img alt="Initial Page Settings" src="/images/page_settings.png | width=314" /></p>
+<p>Once your custom block is created, your screen should look something like the image below. Copy the code from below Language code and paste it into a file called /blocks.js. Copy the code from below Generator stub and paste it into a file called /javascript.js.</p>
+<p><img alt="Completed Page Settings" src="/images/page_settings_complete-1024x435.png" /></p>
+<p>Repeat this step for each of the following blocks and continue to copy and paste the generated code templates into /blocks.js and /javascript.js.</p>
+<p><img alt="Header Block" src="/images/header_block-300x287.jpg" /></p>
+<p><img alt="Text Block" src="/images/text-300x150.png" /></p>
+<p>Create as many different color blocks as you feel like making, and continue to add the generated code templates to blocks.js and javascript.js</p>
+<p><img alt="Color Blocks" src="/images/color1-300x234.png" /></p>
+<h3 id="Setup-the-Toolbox">Setup the Toolbox<a class="anchor-link" href="#Setup-the-Toolbox">¶</a></h3><p>Once all your blocks have been created, you are ready to add them to the Blockly editor’s toolbox. This can be done in the Blockly file (/blockly.html).</p>
+<p>Find the following lines:</p>
+<div class="highlight"><pre><span></span><span class="nt"><xml&lt; span> <span class="na">id=</span><span class="s">”toolbox”</span> <span class="na">style=</span><span class="s">”display:</span> <span class="err">none”</span><span class="nt">></span> <span class="nt"></xml></span>
 </pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>It does!</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt output_prompt">Out[2]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>T</pre>
-</div>
-</div>
+<p>Replace these with the categories and blocks you want in your toolbox. One example is:</p>
+<div class="highlight"><pre><span></span><span class="nt"><xml&lt; span> <span class="na">id=</span><span class="s">”toolbox”</span> <span class="na">style=</span><span class="s">”display:</span> <span class="err">none”</span><span class="nt">></span>
+  <span class="nt"><category&lt; span> <span class="na">name=</span><span class="s">”Page</span> <span class="err">Parts”</span><span class="nt">></span>
+    <span class="nt"><block&lt; span> <span class="na">type=</span><span class="s">”page_header”</span><span class="nt">></block></span>
+    <span class="nt"><block&lt; span> <span class="na">type=</span><span class="s">”page_text”</span><span class="nt">></block></span>
+ <span class="nt"></category></span>
+<span class="nt"><category&lt; span> <span class="na">name=</span><span class="s">”Color”</span><span class="nt">></span>
+    <span class="nt"><block&lt; span> <span class="na">type=</span><span class="s">”color_red”</span><span class="nt">></block></span>
+    <span class="nt"><block&lt; span> <span class="na">type=</span><span class="s">”color_green”</span><span class="nt">></block></span>
+    <span class="nt"><block&lt; span> <span class="na">type=</span><span class="s">”color_blue”</span><span class="nt">></block></span>
+  <span class="nt"></category></span>
+<span class="nt"></xml></span>
+</pre></div>
+<p>Read more about the Toolbox on the Blockly Developers site.</p>
+<h3 id="Default-Blocks-on-the-Stage">Default Blocks on the Stage<a class="anchor-link" href="#Default-Blocks-on-the-Stage">¶</a></h3><p>For the purpose of our page editor, we want to start by displaying a the page_settings custom block on the Blockly editor stage. To do this, we need to specify a few options in the init() function in blockly.html. Find this function and modify it to match the following script.</p>
+<p>Replace the init() function in /blockly.html:</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">Blockly</span><span class="p">.</span><span class="nx">inject</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span> <span class="p">{</span><span class="nx">toolbox</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'toolbox'</span><span class="p">)});</span>
+  <span class="c1">// Let the top-level application know that Blockly is ready.</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">blockly_loaded</span><span class="p">(</span><span class="nx">Blockly</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">root_block</span> <span class="o">=</span> <span class="nx">Blockly</span><span class="p">.</span><span class="nx">Block</span><span class="p">.</span><span class="nx">obtain</span><span class="p">(</span><span class="nx">Blockly</span><span class="p">.</span><span class="nx">mainWorkspace</span><span class="p">,</span> <span class="s1">'page_settings'</span><span class="p">);</span>
+  <span class="nx">root_block</span><span class="p">.</span><span class="nx">initSvg</span><span class="p">();</span>
+  <span class="nx">root_block</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+  <span class="nx">root_block</span><span class="p">.</span><span class="nx">setMovable</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="nx">root_block</span><span class="p">.</span><span class="nx">setDeletable</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>Test the Blockly Editor</p>
+<p>Navigate to your /index.html file in a browser to see if everything works as anticipated.</p>
+<p>Troubleshooting Tips:</p>
+<p>Depending on your settings, Chrome may not allow you to share data between frames when running this site locally. If you receive an error, try using another browser such as Firefox.
+If you find you can’t snap together blocks that you need to, ensure that the parent block has the proper value specified for setCheck(). Also check that the child block is returning the proper Output value.
+Example: Both the setCheck and the Output value are “String”</p>
+<div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">appendValueInput</span><span class="p">(</span><span class="s2">"page_paragraph"</span><span class="p">).</span><span class="nx">setCheck</span><span class="p">(</span><span class="s2">"String"</span><span class="p">)</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">setOutput</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="s2">"String"</span><span class="p">);</span>
+</pre></div>
+<h3 id="Write-the-JavaScript-Generator">Write the JavaScript Generator<a class="anchor-link" href="#Write-the-JavaScript-Generator">¶</a></h3><p>Now that the Blockly interface is complete, we need to tell Blockly what to do with the blocks when people try to run their program. This involves writing a custom JavaScript generator.</p>
+<p>We already started to create this generator in /javascript.js using the code from the generated Generator stub templates in the Block Factory. When viewing this file, you should see a line in each block that looks like:</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">code</span> <span class="o">=</span> <span class="s1">'...'</span><span class="p">;</span>
+</pre></div>
+<p>This code variable needs to be replaced with the JavasSript code that is represented by that code block. For example, our page_header custom block needs to set the color and text of the header. The code for this should look like:</p>
+<div class="highlight"><pre><span></span><span class="nx">Blockly</span><span class="p">.</span><span class="nx">JavaScript</span><span class="p">[</span><span class="s1">'page_header'</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">value_header_text</span> <span class="o">=</span> <span class="nx">Blockly</span><span class="p">.</span><span class="nx">JavaScript</span><span class="p">.</span><span class="nx">valueToCode</span><span class="p">(</span><span class="nx">block</span><span class="p">,</span> <span class="s1">'header_text'</span><span class="p">,</span> <span class="nx">Blockly</span><span class="p">.</span><span class="nx">JavaScript</span><span class="p">.</span><span class="nx">ORDER_ATOMIC</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">value_color</span> <span class="o">=</span> <span class="nx">Blockly</span><span class="p">.</span><span class="nx">JavaScript</span><span class="p">.</span><span class="nx">valueToCode</span><span class="p">(</span><span class="nx">block</span><span class="p">,</span> <span class="s1">'color'</span><span class="p">,</span> <span class="nx">Blockly</span><span class="p">.</span><span class="nx">JavaScript</span><span class="p">.</span><span class="nx">ORDER_ATOMIC</span><span class="p">);</span>
+
+  <span class="c1">// The code variable contains the javascript that will run when this code block is executed</span>
+  <span class="kd">var</span> <span class="nx">code</span> <span class="o">=</span> <span class="s1">'document.getElementById("header").innerHTML = "'</span> <span class="o">+</span> <span class="nx">value_header_text</span> <span class="o">+</span> <span class="s1">'";\n'</span><span class="p">;</span>
+  <span class="nx">code</span> <span class="o">+=</span> <span class="s1">'document.getElementById("header").style.color = "'</span> <span class="o">+</span> <span class="nx">value_color</span> <span class="o">+</span> <span class="s1">'";\n'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">code</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+<p>Do this for the rest of the custom block generator stubs that you pasted into /javascript.js. In the end, it should look something like the code found here:
+<a href="https://github.com/jaelle/blockly-page-editor/blob/gh-pages/javascript.js">https://github.com/jaelle/blockly-page-editor/blob/gh-pages/javascript.js</a></p>
+<p>Read more about creating custom code generators on the Blockly Developer site.</p>
+<h3 id="Test-the-Generated-JavaScript">Test the Generated JavaScript<a class="anchor-link" href="#Test-the-Generated-JavaScript">¶</a></h3><p>We are nearly done! The only step left is to include the run function that will handle executing the generated Blockly code. In /index.html, make sure that a run_code() function is included below the init() function.</p>
+<div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">run_code</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">code</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">Blockly</span><span class="p">.</span><span class="nx">JavaScript</span><span class="p">.</span><span class="nx">workspaceToCode</span><span class="p">();</span>
+  <span class="nb">eval</span><span class="p">(</span><span class="nx">code</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>Now, navigate to /index.html in your browser and have fun editing your page!</p>
+<h3 id="Further-Reading">Further Reading<a class="anchor-link" href="#Further-Reading">¶</a></h3><p>If you want to continue experimenting with Blockly, be sure to check out all the official documentation at: <a href="https://developers.google.com/blockly/">https://developers.google.com/blockly/</a></p>
 </div>
 </div>
 </div>
@@ -1102,7 +1196,7 @@ h6:hover .anchor-link {
     <!-- footer -->
     <footer>
       <p>
-        © Jaelle
+        Copyright © 2018 Jaelle Scheuerman 
       </p>
     </footer>
   </body>
