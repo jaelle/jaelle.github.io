@@ -78,6 +78,10 @@ body {
     padding-top:1em;
 }
 
+.post .posttitle {
+    font-size: 1.3em;
+}
+
 .posttitle a {
     padding-left: 10px; /* Hack to dodge :hover issue. */
     position: relative; /* Hack to dodge :hover issue. */
