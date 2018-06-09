@@ -12,7 +12,7 @@
     
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.2.0/css/font-awesome.css">
 
     <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
     <link href="css/owl.theme.css" rel="stylesheet" media="screen">
@@ -43,7 +43,7 @@
           <h2>Jaelle Scheuerman</h2>
                 
     <div class="space"></div> <!-- 40px Vertical Spacing -->
- <img src="img/team/2.jpg" class="img-responsive" alt="Jaelle Scheuerman" width="165">
+ <img src="img/team/2.jpg" class="img-responsive" alt="...">
                 
     <div class="space"></div> <!-- 40px Vertical Spacing -->
               <div class="subscribe-text">
@@ -73,12 +73,12 @@
         <div class="row">
             <div class="t-social2">
               <div class="col-md-12 col-sm-12 col-lg-12">
-                <a href="https://jaelle/linkedin.com/in/jaelle"><i class="fab fa-linkedin"></i></a> 
-                <a href="https://twitter.com/jaelle" target="_blank"><i class="fab fa-twitter tsocial"></i></a> 
+                <a href="https://jaelle/linkedin.com/in/jaelle"><i class="fa fa-linkedin tsocial"></i></a> 
+                <a href="https://twitter.com/jaelle" target="_blank"><i class="fa fa-twitter tsocial"></i></a> 
 
-                <a href="https://github.com/jaelle" target="_blank"><i class="fab fa-github tsocial"></i></a> 
+                <a href="https://github.com/jaelle" target="_blank"><i class="fa fa-github tsocial"></i></a> 
 
-                <a href="http://jlcreations.com" target="_blank"><i class="fas fa-external-link-square-alt"></i></a> <!-- Replace # with Your Twitter URL -->
+                <a href="http://jlcreations.com" target="_blank"><i class="fa fa-external-link-square"></i></a> <!-- Replace # with Your Twitter URL -->
               </div>
             </div>
         </div> <!-- End Row -->

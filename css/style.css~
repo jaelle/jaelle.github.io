@@ -106,7 +106,7 @@ nav.footer {
     padding: 15px 7px;
     width: 100%;
 }
-.t-social .fab, .t-social .fas {
+.t-social .fa {
     display: inline-block;
     padding: 6px;
     color: #ea6060;
@@ -115,7 +115,7 @@ nav.footer {
     border: 1.5px solid transparent;
     border-radius: 5px;
 }
-.t-social .fab:hover, .t-social .fas:hover {
+.t-social .fa:hover {
     padding: 6px;
     width: 30px;
     height: 30px;
@@ -165,7 +165,7 @@ span.t-position {
     transition: all 0.5s;
     -webkit-font-smoothing: antialiased;
 }
-.t-social2 .fab, .t-social2 .fas {
+.t-social2 .fa {
     display: inline-block;
     padding: 6px;
     color: #ffffff;
@@ -174,7 +174,7 @@ span.t-position {
     border: 1.5px solid transparent;
     border-radius: 5px;
 }
-.t-social2 .fab:hover, .t-social2 .fas:hover {
+.t-social2 .fa:hover {
     padding: 6px;
     width: 30px;
     height: 30px;
@@ -292,7 +292,7 @@ span.t-position {
     right: -10%;
     top: 30%;
 }
-.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img{ margin: auto; border-radius: 10%;}
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img{ margin: auto}
 /***************************
 ******** Pricing ********
 ***************************/
