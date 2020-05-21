@@ -1,0 +1,41 @@
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <div align="center">
+        <img src="assets/images/profile-photo.jpg" width="200" class="profile-photo" />
+      </div>
+      <h1>
+        <a href="#">
+          {{ site.title }}
+        </a>
+      </h1>
+      <p class="lead">{{ site.description }}</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="#">Home</a>
+
+      {% comment %}
+        The code below dynamically generates a sidebar nav of pages with
+        `layout: page` in the front-matter. See readme for usage.
+      {% endcomment %}
+
+      {% assign pages_list = site.pages %}
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.layout == "page" %}
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      <a class="sidebar-nav-item" href="pdfs/Jaelle-Scheuerman-CV.pdf">Download CV</a>
+      <a class="sidebar-nav-item" href="https://scholar.google.com/citations?user=LB5kNtMAAAAJ&hl=en">Google Scholar</a>
+      <!--a class="sidebar-nav-item" href="https://www.github.com/jaelle">GitHub</a>
+      <a class="sidebar-nav-item" href="https://www.linkedin.com/in/jaelle">LinkedIn</a>
+      <a class="sidebar-nav-item" href="http://www.twitter.com/jaelle">Twitter</a//-->
+    </nav>
+
+    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+  </div>
+</div>
