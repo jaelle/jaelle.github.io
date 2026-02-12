@@ -19,6 +19,7 @@ gem "jekyll", "~> 4.2"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-paginate", "~> 1.1"
 end
 
 gem 'activesupport', '>= 6.1.7.5'
